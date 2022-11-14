@@ -563,7 +563,7 @@ loop e = do
                     Cli.respondNumbered $ CantDeleteNamespace ppeDecl endangerments
                     Cli.returnEarlyWithoutOutput
               Cli.stepAt description $
-                BranchUtil.makeDeleteBranch (Path.convert absPath)
+                BranchUtil.makeObliterateBranch (Path.convert absPath)
               afterDelete
             SwitchBranchI maybePath' -> do
               path' <-
