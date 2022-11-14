@@ -10,12 +10,25 @@ dependents.usage1 = dependencies.term1 + dependencies.term2
 dependents.usage2 = dependencies.term1 * dependencies.term2
 ```
 
-Deleting a namespace with no external dependencies should succeed.
+Deleting a namespace with no external dependencies should succeed and leave no history.
 
 ```ucm
 .> delete.namespace no_dependencies
 
   Done.
+
+.> history no_dependencies
+
+  Note: The most recent namespace hash is immediately below this
+        message.
+  
+  ⊙ 1. #tv7rdre7vr
+  
+    - Deletes:
+    
+      thing
+  
+  □ 2. #die3t91gsr (start of history)
 
 ```
 Deleting a namespace with external dependencies should fail and list all dependents.
